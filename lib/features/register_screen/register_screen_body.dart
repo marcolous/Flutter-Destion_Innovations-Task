@@ -9,7 +9,6 @@ import 'package:destion_innovations_task/core/customs/password_text_field.dart';
 import 'package:destion_innovations_task/core/utils/routes.dart';
 import 'package:destion_innovations_task/core/utils/show_snack_bar.dart';
 import 'package:destion_innovations_task/core/utils/styles.dart';
-import 'package:destion_innovations_task/features/register_screen/unverified_email_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -64,8 +63,6 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
               PasswordTextField(
                   hintText: 'Confirm password', controller: _confirmPass),
               const Gap(15),
-              const UnVerifiedEmailWidget(),
-              const Gap(15),
               CustomProgressIndicator(
                 isLoading: isLoading,
                 child: CustomButton(
@@ -76,7 +73,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
               ),
               const Gap(35),
               const CustomOrWith(title: 'Or Register with'),
-              const Gap(22),
+              const Gap(35),
               const CustomGoogleButton(),
               CustomRow(
                 title: 'Already have an account? ',

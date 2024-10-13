@@ -66,7 +66,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
               ),
               const Gap(35),
               const CustomOrWith(title: 'Or Login with'),
-              const Gap(22),
+              const Gap(35),
               const CustomGoogleButton(),
               CustomRow(
                 title: 'Don\'t have an account? ',
