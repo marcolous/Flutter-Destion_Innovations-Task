@@ -1,4 +1,5 @@
 import 'package:destion_innovations_task/core/utils/routes.dart';
+import 'package:destion_innovations_task/features/login_screen/login_screen.dart';
 import 'package:destion_innovations_task/features/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class DestionInnovations extends StatelessWidget {
       home: const WelcomeScreen(),
       routes: {
         Routes.kWelcomeScreen: (context) => const WelcomeScreen(),
-        // Routes.kLoginScreen: (context) => const LoginScreen(),
+        Routes.kLoginScreen: (context) => const LoginScreen(),
         // Routes.kRegisterScreen: (context) => const RegisterScreen(),
         // Routes.kHomeScreen: (context) => const HomeScreen(),
         // Routes.kVerificationScreen: (context) => const VerificationScreen(),
