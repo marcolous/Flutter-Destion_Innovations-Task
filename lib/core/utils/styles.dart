@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Styles {
-  static String fontFamily = 'Poppins';
+  static String fontFamily = 'Urbanist';
   static TextStyle style10(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 10),
