@@ -1,6 +1,8 @@
 import 'package:destion_innovations_task/core/utils/routes.dart';
 import 'package:destion_innovations_task/features/login_screen/login_screen.dart';
 import 'package:destion_innovations_task/features/register_screen/register_screen.dart';
+import 'package:destion_innovations_task/features/reset_password/reset_password.dart';
+import 'package:destion_innovations_task/features/verification_screen/verification_screen.dart';
 import 'package:destion_innovations_task/features/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,13 +25,12 @@ class DestionInnovations extends StatelessWidget {
         Routes.kLoginScreen: (context) => const LoginScreen(),
         Routes.kRegisterScreen: (context) => const RegisterScreen(),
         // Routes.kHomeScreen: (context) => const HomeScreen(),
-        // Routes.kVerificationScreen: (context) => const VerificationScreen(),
-        // Routes.kResetPasswordScreen: (context) => const ResetPassword(),
+        Routes.kVerificationScreen: (context) => const VerificationScreen(),
+        Routes.kForgotPasswordScreen: (context) => const ResetPassword(),
       },
     );
   }
 }
 
-// make validator on login screen
-// make validator on register screen
-// 
+
+// navigate to 

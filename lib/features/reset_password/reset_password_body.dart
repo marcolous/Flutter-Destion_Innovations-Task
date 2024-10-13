@@ -1,8 +1,5 @@
 import 'package:destion_innovations_task/core/customs/custom_back_button.dart';
 import 'package:destion_innovations_task/core/customs/custom_button.dart';
-import 'package:destion_innovations_task/core/customs/custom_google_button.dart';
-import 'package:destion_innovations_task/core/customs/custom_or_with.dart';
-import 'package:destion_innovations_task/core/customs/custom_progress_indicator.dart';
 import 'package:destion_innovations_task/core/customs/custom_row.dart';
 import 'package:destion_innovations_task/core/customs/email_text_field.dart';
 import 'package:destion_innovations_task/core/customs/password_text_field.dart';
@@ -12,26 +9,21 @@ import 'package:destion_innovations_task/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class RegisterScreenBody extends StatefulWidget {
-  const RegisterScreenBody({
-    super.key,
-  });
+class ResetPasswordBody extends StatefulWidget {
+  const ResetPasswordBody({super.key});
 
   @override
-  State<RegisterScreenBody> createState() => _RegisterScreenBodyState();
+  State<ResetPasswordBody> createState() => _ResetPasswordBodyState();
 }
 
-class _RegisterScreenBodyState extends State<RegisterScreenBody> {
-  final TextEditingController _userName = TextEditingController();
+class _ResetPasswordBodyState extends State<ResetPasswordBody> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _confirmPass = TextEditingController();
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool isLoading = false;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    _userName.dispose();
     _email.dispose();
     _password.dispose();
     _confirmPass.dispose();
@@ -50,37 +42,35 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
               const CustomBackButton(),
               const Gap(28),
               Text(
-                'Hello! Register to get started',
+                'Forgot Password?',
                 style: Styles.style30(context),
               ),
-              const Gap(32),
-              EmailTextField(hintText: 'Username', controller: _userName),
-              const Gap(12),
-              EmailTextField(hintText: 'Email', controller: _email),
-              const Gap(12),
-              PasswordTextField(hintText: 'Password', controller: _password),
-              const Gap(12),
-              PasswordTextField(
-                  hintText: 'Confirm password', controller: _confirmPass),
-              const Gap(15),
-              CustomProgressIndicator(
-                isLoading: isLoading,
-                child: CustomButton(
-                  title: 'Register',
-                  onPressed: () => _register(
-                      email: _email.text.trim(), password: _password.text),
-                ),
+              const Gap(20),
+              Text(
+                'Don\'t worry! It occurs. Please enter the email address linked with your account.',
+                style: Styles.style16(context),
               ),
               const Gap(35),
-              const CustomOrWith(title: 'Or Register with'),
-              const Gap(35),
-              const CustomGoogleButton(),
+              EmailTextField(hintText: 'Enter your email', controller: _email),
+              const Gap(12),
+              PasswordTextField(
+                  hintText: 'New Password', controller: _password),
+              const Gap(12),
+              PasswordTextField(
+                  hintText: 'Confirm New Password', controller: _confirmPass),
+              const Gap(15),
+              const Gap(32),
+              CustomButton(
+                title: 'Reset Password',
+                onPressed: () {
+                  _resetPassword();
+                },
+              ),
               CustomRow(
-                title: 'Already have an account? ',
-                subTitle: 'Login Now',
+                title: 'Remember Password? ',
+                subTitle: 'Login',
                 onTap: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, Routes.kLoginScreen);
                 },
               )
             ],
@@ -90,13 +80,14 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
     );
   }
 
-  void _register({required String email, required String password}) async {
+  void _resetPassword() async {
     if (_password.text != _confirmPass.text) {
       ShowSnackBar.show(context, 'Password doesn\'t match');
       return;
     }
     if (formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, Routes.kVerificationScreen);
+      Navigator.pushNamed(context, Routes.kLoginScreen);
+      ShowSnackBar.show(context, 'Please Check Your Email for Verification');
     }
   }
 }

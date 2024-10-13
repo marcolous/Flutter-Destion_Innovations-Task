@@ -11,7 +11,7 @@ class ForgotPasswordWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, Routes.kResetPasswordScreen);
+        Navigator.pushNamed(context, Routes.kForgotPasswordScreen);
       },
       child: Align(
         alignment: Alignment.bottomRight,
