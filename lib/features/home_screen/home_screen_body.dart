@@ -18,16 +18,17 @@ class HomeScreenBody extends StatelessWidget {
         child: Column(
           children: [
             const HomeScreenAppBar(),
+            const Gap(20),
             Expanded(
               child: ScrollConfiguration(
                 behavior: NoBounceScrollBehavior(),
                 child: GridView.builder(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.only(bottom: 20),
                   itemCount: Consts.products.length,
                   // clipBehavior: Clip.none,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: .8,
+                    childAspectRatio: .7,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
@@ -38,7 +39,7 @@ class HomeScreenBody extends StatelessWidget {
                   },
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -85,6 +86,7 @@ class CardItem extends StatelessWidget {
                     style: Styles.style16Bold(context),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
