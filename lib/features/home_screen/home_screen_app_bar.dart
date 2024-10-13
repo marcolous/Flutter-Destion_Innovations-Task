@@ -15,7 +15,7 @@ class HomeScreenAppBar extends StatelessWidget {
       children: [
         Text(
           'Destion Innovations',
-          style: Styles.style26(context),
+          style: Styles.style22(context),
           // textAlign: TextAlign.end,
         ),
         const Spacer(),

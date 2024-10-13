@@ -13,8 +13,8 @@ class AppImages {
   static SvgPicture createNoteSvg =
       SvgPicture.asset("assets/images/create_note.svg");
 
-  static Image createNotePng = Image.asset(
-    "assets/images/createNote.png",
+  static Image product = Image.asset(
+    "assets/images/product.jpg",
     fit: BoxFit.cover,
   );
 }
