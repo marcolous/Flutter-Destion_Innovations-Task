@@ -7,6 +7,7 @@ import 'package:destion_innovations_task/core/customs/custom_row.dart';
 import 'package:destion_innovations_task/core/customs/email_text_field.dart';
 import 'package:destion_innovations_task/core/customs/password_text_field.dart';
 import 'package:destion_innovations_task/core/utils/routes.dart';
+import 'package:destion_innovations_task/core/utils/show_snack_bar.dart';
 import 'package:destion_innovations_task/core/utils/styles.dart';
 import 'package:destion_innovations_task/features/login_screen/forgot_password_widget.dart';
 import 'package:flutter/material.dart';
@@ -84,6 +85,9 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
   }
 
   void _login({required String email, required String password}) async {
-    if (formKey.currentState!.validate()) {}
+    if (formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, Routes.kHomeScreen);
+      ShowSnackBar.show(context, 'Logged in Successfully');
+    }
   }
 }
